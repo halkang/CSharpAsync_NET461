@@ -44,7 +44,12 @@ namespace C009.執行緒不安全的範例
             {
                 // 底下指令會因為執行緒的 Context Switch，造成該命令尚未完全完成
                 // 導致最後運算結果不正確
-                counter++;
+                lock(share)
+                {
+
+                    counter++;
+
+                }
             }
         }
     }
